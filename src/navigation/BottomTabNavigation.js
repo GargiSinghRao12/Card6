@@ -4,10 +4,10 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { useRoute } from '@react-navigation/native';
 import { VectorIcons } from '../containers/components/VectorIcons';
 import Home from '../containers/screens/Home';
-import DriveThru from '../containers/screens/DriveThru';
 import colors from '../constants/colors';
 import { font } from '../constants/fontSizes';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+import Profile from '../components/screens/Profile';
 
 const Tab = createBottomTabNavigator();
 
@@ -20,7 +20,7 @@ export const BottomTab = () => {
             tabBar={props => <BottomTabDesignComponent {...props} />}
         >
             <Tab.Screen name="Home" component={Home} />
-            <Tab.Screen name="DriveThru" component={DriveThru} />
+            <Tab.Screen name="Profile" component={Profile} />
             {/* <Tab.Screen name="MyOrders" component={MyOrders} /> */}
             {/* <Tab.Screen name="Cart" component={Cart} /> */}
 
@@ -60,8 +60,8 @@ const BottomTabDesignComponent = (props) => {
 
             }} >
                 <TouchableOpacity style={{ alignItems: 'center' }} onPress={() => { navigation.navigate('Home') }} >
-                    <VectorIcons familyName={'IonIcons'} iconName={'home-outline'} size={25} color={bottomTabScreensList[activeBottomTabScreenIndex] == 'Home' ? colors.primaryThemeColor : 'gray'} />
-                    <Text style={{ fontSize: 12, fontFamily: font.PoppinsSemiBolds, color: bottomTabScreensList[activeBottomTabScreenIndex] == 'Home' ? colors.primaryThemeColor : 'gray' }} >Home</Text>
+                    {/* <VectorIcons familyName={'IonIcons'} iconName={'home-outline'} size={25} color={bottomTabScreensList[activeBottomTabScreenIndex] == 'Home' ? colors.primaryThemeColor : 'gray'} /> */}
+                    <Text style={{ fontSize: 12,  color: bottomTabScreensList[activeBottomTabScreenIndex] == 'Home' ? "blue" : 'gray' }} >Home</Text>
                 </TouchableOpacity>
 
 
@@ -72,13 +72,13 @@ const BottomTabDesignComponent = (props) => {
                 flex: 1,
                 marginHorizontal: wp(10),
                 paddingVertical: 3,
-                borderTopWidth: bottomTabScreensList[activeBottomTabScreenIndex] == 'DriveThru' ? 2 : 0,
-                borderColor: bottomTabScreensList[activeBottomTabScreenIndex] == 'DriveThru' ? colors.primaryThemeColor : 'transparent',
+                borderTopWidth: bottomTabScreensList[activeBottomTabScreenIndex] == 'Profile' ? 2 : 0,
+                borderColor: bottomTabScreensList[activeBottomTabScreenIndex] == 'Profile' ? "blue" : 'transparent',
             }} >
 
-                <TouchableOpacity style={{ alignItems: 'center' }} onPress={() => { navigation.navigate('DriveThru') }} >
-                    <VectorIcons familyName={'IonIcons'} iconName={'compass-outline'} size={25} color={bottomTabScreensList[activeBottomTabScreenIndex] == 'DriveThru' ? colors.primaryThemeColor : 'gray'} />
-                    <Text style={{ fontSize: 12, fontFamily: font.PoppinsSemiBolds, color: bottomTabScreensList[activeBottomTabScreenIndex] == 'DriveThru' ? colors.primaryThemeColor : 'gray' }} >DriveThru</Text>
+                <TouchableOpacity style={{ alignItems: 'center' }} onPress={() => { navigation.navigate('Profile') }} >
+                    {/* <VectorIcons familyName={'IonIcons'} iconName={'compass-outline'} size={25} color={bottomTabScreensList[activeBottomTabScreenIndex] == 'DriveThru' ? colors.primaryThemeColor : 'gray'} /> */}
+                    <Text style={{ fontSize: 12,  color: bottomTabScreensList[activeBottomTabScreenIndex] == 'Profile' ? "blue" : 'gray' }} >Profile</Text>
                 </TouchableOpacity>
 
             </View>
