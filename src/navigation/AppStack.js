@@ -11,7 +11,7 @@ export default function AppStack() {
     <Stack.Navigator
       initialRouteName={'Home'}
 
-      // screenOptions={{ headerShown: false }}
+      screenOptions={{ headerShown: false }}
       >
       {/* <Stack.Screen name="Home" component={Home} /> */}
 

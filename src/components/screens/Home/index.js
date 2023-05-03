@@ -47,8 +47,8 @@ const Home = (props) => {
   
 
   return (
-    <View style={styles.bg}>
-      <Text>fdgbfkjhmlk</Text>
+    <View style={{flex:1,justifyContent:'center',alignItems:'center'}}>
+      <Text>Home Screen</Text>
     </View>
   );
 };

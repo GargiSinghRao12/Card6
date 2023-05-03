@@ -2,12 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { TouchableOpacity, View, Text, Platform } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { useRoute } from '@react-navigation/native';
-import { VectorIcons } from '../containers/components/VectorIcons';
-import Home from '../containers/screens/Home';
-import colors from '../constants/colors';
-import { font } from '../constants/fontSizes';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import Profile from '../components/screens/Profile';
+import Home from '../components/screens/Home';
 
 const Tab = createBottomTabNavigator();
 
@@ -56,7 +53,7 @@ const BottomTabDesignComponent = (props) => {
                 paddingVertical: 3,
                 marginHorizontal: wp(10),
                 borderTopWidth: bottomTabScreensList[activeBottomTabScreenIndex] == 'Home' ? 2 : 0,
-                borderColor: bottomTabScreensList[activeBottomTabScreenIndex] == 'Home' ? colors.primaryThemeColor : 'transparent',
+                borderColor: bottomTabScreensList[activeBottomTabScreenIndex] == 'Home' ? 'blue' : 'transparent',
 
             }} >
                 <TouchableOpacity style={{ alignItems: 'center' }} onPress={() => { navigation.navigate('Home') }} >
